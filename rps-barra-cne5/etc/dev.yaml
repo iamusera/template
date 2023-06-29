@@ -1,0 +1,63 @@
+base:
+  flask:
+    host: 0.0.0.0
+    port: 8000
+  redis:
+    broker: redis://:biz@192. :6379/1
+    backend: redis://:biz@192. :6379/1
+    timezone: Asia/Shanghai
+  grpc:
+    host: 0.0.0.0
+    port: 5001
+    worker: 4
+  wind_db:
+    host:  
+    port: 1521
+    username: winddb
+    password:  
+    schema: wind
+    echo: False
+    modify: False
+    pool_size: 5
+    max_overflow: 5
+    pool_recycle: 500
+    pool_timeout: 600
+  rps_db:
+    host:  
+    port: 1521
+    username: rps
+    password: rps
+    schema: orcl
+    echo: False
+    modify: False
+    pool_size: 5
+    max_overflow: 5
+    pool_recycle: 500
+    pool_timeout: 600
+  clickhouse:
+    host:  
+    port: 18123
+    username: admin
+    password: 123456
+    schema: my_database
+extra:
+#  db_security_key: S0FJWVVEU1NQTE04ODg4OA==
+  db_username_encrypted: True
+  db_password_encrypted: True
+log:
+  info:
+    file: log/info.log
+    level: INFO
+    retention: 7 days
+    rotation: "00:00"
+    enqueue: True
+    colorize: True
+    format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {file} | {line} | {message}"
+  error:
+    file: log/error.log
+    level: ERROR
+    retention: 7 days
+    rotation: "00:00"
+    enqueue: True
+    colorize: True
+    format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {file} | {line} | {message}"

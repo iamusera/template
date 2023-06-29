@@ -1,0 +1,7 @@
+log/
+.idea/
+.git/
+.vscode/
+.venv/
+.history/
+*.csv

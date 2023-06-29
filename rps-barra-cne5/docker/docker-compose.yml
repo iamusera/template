@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  barra:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    image: care_modle:latest
+    container_name: care_modle
+    restart: always
+    environment:
+      FLASK_CONFIG: "sit"
+    ports:
+      - "15000:5000"
+    volumes:
+      - ./log:/app/python/log

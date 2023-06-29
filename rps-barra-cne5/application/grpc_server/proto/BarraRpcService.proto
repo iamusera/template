@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.ncamc.rps.common.grpc.example;;
+
+option java_multiple_files = true;
+option java_package = "com.ncamc.rps.common.grpc.example.lib";
+option java_outer_classname = "BarraCalcProto";
+
+
+message BarraRequest {
+  string code = 1;
+  string json = 2;
+}
+
+message BarraResponse {
+  string code = 1;
+  string message = 2;
+}
+
+service BarraRpcService {
+  // 单向流
+  rpc Barra(BarraRequest) returns (stream BarraResponse){}
+}
+
